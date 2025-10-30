@@ -93,9 +93,9 @@ function addNewTicket(ticketData) {
     imgUrl: ticketData.ticketImgUrl,
     area: ticketData.ticketRegion,
     description: ticketData.ticketDescription,
-    group: ticketData.ticketNum,
-    price: ticketData.ticketPrice,
-    rate: ticketData.ticketRate,
+    group: Number(ticketData.ticketNum),
+    price: Number(ticketData.ticketPrice),
+    rate: Number(ticketData.ticketRate),
   };
   data.push(newTicket);
   return data;
