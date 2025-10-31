@@ -1,4 +1,4 @@
-import { data, addNewTicket, filterTickets } from './data.js';
+import { getData, addNewTicket, filterTickets } from './data.js';
 import { renderTicketCardArea, getFormData, resetForm } from './dom.js';
 
 
@@ -27,7 +27,7 @@ function initEventListeners() {
       return;
     }
 
-    addNewTicket(formData);
+    const data = addNewTicket(formData);
     renderTicketCardArea(data);
     resetForm();
     regionSelect.value = '全部地區';
@@ -38,7 +38,8 @@ function initEventListeners() {
 
 
 // 初始化應用程式
-function initApp() {
+async function initApp() {
+  const data = await getData(axios);
   renderTicketCardArea(data);
   initEventListeners();
 }
