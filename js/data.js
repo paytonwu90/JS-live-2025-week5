@@ -23,13 +23,7 @@ async function getData(axios) {
 function addNewTicket(ticketData) {
   const newTicket = {
     id: data.length,
-    name: ticketData.ticketName,
-    imgUrl: ticketData.ticketImgUrl,
-    area: ticketData.ticketRegion,
-    description: ticketData.ticketDescription,
-    group: Number(ticketData.ticketNum),
-    price: Number(ticketData.ticketPrice),
-    rate: Number(ticketData.ticketRate),
+    ...ticketData
   };
   data.push(newTicket);
   return data;

@@ -1,5 +1,5 @@
 import { getData, addNewTicket, filterTickets } from './data.js';
-import { renderTicketCardArea, getFormData, resetForm } from './dom.js';
+import { renderTicketCardArea, checkIsFormValid, getFormData, resetForm } from './dom.js';
 import { testData } from './testData.js';
 
 
@@ -20,14 +20,12 @@ function initEventListeners() {
   addTicketBtn.addEventListener('click', handleAddTicketClick);
 
   function handleAddTicketClick() {
-    const formData = getFormData();
-    const { ticketName, ticketImgUrl, ticketRegion, ticketPrice, ticketNum, ticketRate, ticketDescription } = formData;
-    
-    if (ticketName === '' || ticketImgUrl === '' || ticketRegion === '' || ticketPrice === '' || ticketNum === '' || ticketRate === '' || ticketDescription === '') {
-      alert('請填寫所有必填欄位');
+    // 檢查必填欄位
+    if (!checkIsFormValid()) {
       return;
     }
 
+    const formData = getFormData();
     const data = addNewTicket(formData);
     renderTicketCardArea(data);
     resetForm();
