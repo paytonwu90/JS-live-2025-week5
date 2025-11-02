@@ -295,6 +295,16 @@ body {
   }
 }
 
+.search-chart-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
 .search-area {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -302,9 +312,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 50px 0;
+  flex: auto;
 }
 
 .search-area p {
@@ -349,7 +357,7 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 13px auto 0 auto;
 }
 
 .ticketCard {
@@ -508,4 +516,8 @@ body {
   .cantFind-area {
     margin-top: 0px;
   }
+}
+
+.c3-chart-arcs-title {
+  font-size: 1rem;
 }

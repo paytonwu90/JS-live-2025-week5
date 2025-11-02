@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.css">
     <link rel="stylesheet" href="style.css">
     <title>JS 第五週主線</title>
 </head>
@@ -110,16 +111,19 @@
     </form>
   </section>
   <section class="main-content">
-    <!-- 搜尋區 -->
-    <div class="search-area">
-      <select name="" class="regionSearch">
-        <option value="地區搜尋" disabled selected hidden>地區搜尋</option>
-        <option value="全部地區">全部地區</option>
-        <option value="台北">台北</option>
-        <option value="台中">台中</option>
-        <option value="高雄">高雄</option>
-      </select>
-      <p id="searchResult-text">本次搜尋共 3 筆資料</p>
+    <div class="search-chart-area">
+      <!-- 搜尋區 -->
+      <div class="search-area">
+        <select name="" class="regionSearch">
+          <option value="地區搜尋" disabled selected hidden>地區搜尋</option>
+          <option value="全部地區">全部地區</option>
+          <option value="台北">台北</option>
+          <option value="台中">台中</option>
+          <option value="高雄">高雄</option>
+        </select>
+        <p id="searchResult-text">本次搜尋共 3 筆資料</p>
+      </div>
+      <div id="chart"></div>
     </div>
     <!-- 套票卡片區 -->
     <ul class="ticketCard-area">
@@ -218,6 +222,8 @@
       <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/js_week5/no_found.png?raw=true" alt="">
     </div>
   </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.js"></script>
   <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>

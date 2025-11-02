@@ -1,7 +1,7 @@
 import { getData, addNewTicket, filterTickets } from './data.js';
 import { renderTicketCardArea, checkIsFormValid, getFormData, resetForm } from './dom.js';
 import { testData } from './testData.js';
-
+import { renderChart } from './chart.js';
 
 function initEventListeners() {
   // 監聽地區篩選選單
@@ -28,6 +28,7 @@ function initEventListeners() {
     const formData = getFormData();
     const data = addNewTicket(formData);
     renderTicketCardArea(data);
+    renderChart(c3, data);
     resetForm();
     regionSelect.value = '全部地區';
 
@@ -57,6 +58,7 @@ async function initApp() {
   const data = await getData(axios);
   renderTicketCardArea(data);
   initEventListeners();
+  renderChart(c3, data);
 }
 
 
