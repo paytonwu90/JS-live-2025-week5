@@ -1,4 +1,4 @@
-async function renderChart(c3, data) {
+function renderChart(c3, data) {
   // 從 data 中根據 area 分組，並計算每個分組的數量
   const areaCount = data.reduce((acc, ticket) => {
     if (acc[ticket.area]) {
